@@ -1,3 +1,6 @@
+// use the useColorMode() to change the entire application color
+// do not use text-white in the default color , this will not work with the theme color
+
 export const themeState = defineStore('theme', () => {
   const colorMode = useColorMode()
   const currentTheme = ref<string>(colorMode.value)

@@ -11,5 +11,6 @@ export default {
     fontFamily: {
       sans: ['Bangers']
     }
-  }
+  },
+  plugins: [require('daisyui')]
 }
