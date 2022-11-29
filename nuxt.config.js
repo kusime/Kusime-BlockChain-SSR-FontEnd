@@ -53,4 +53,15 @@ export default defineNuxtConfig({
     layoutTransition: { name: 'fade', mode: 'out-in' },
     pageTransition: { name: 'bounce', mode: 'out-in' }
   },
+  // https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned
+  imports: {
+    dirs: [
+      // Scan top-level modules
+      'composables',
+      // ... or scan modules nested one level deep with a specific name and file extension
+      'composables/*/index.{ts,js,mjs,mts}',
+      // ... or scan all modules within given directory
+      'composables/**'
+    ]
+  }
 })

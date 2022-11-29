@@ -17,9 +17,7 @@
 </template>
 
 <script setup lang="ts">
-import { alertState } from '~~/stores/alertState'
-
-const alert = alertState()
+const alert = useStateAlert()
 const { showAlert, alertData, alertType, alertTitle } = storeToRefs(alert)
 </script>
 

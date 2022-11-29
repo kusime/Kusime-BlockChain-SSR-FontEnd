@@ -1,6 +1,6 @@
 <template>
   <div>
-    Parent in parent.vue
+    Parent in parent.vue {{ $hello('world') }}
     <NuxtPage />
   </div>
 </template>

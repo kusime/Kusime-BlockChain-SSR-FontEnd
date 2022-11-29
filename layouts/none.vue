@@ -1,8 +1,7 @@
 <template>
   <v-app class="transition-all duration-300">
-    <Kalert />
+    <VisualableKheader />
     <slot />
   </v-app>
 </template>
-
 <script setup lang="ts"></script>

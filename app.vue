@@ -1,5 +1,6 @@
 <template>
   <NuxtLayout>
+    <LazyFunctionalKalert />
     <NuxtPage
       :transition="{
         name: 'fade',

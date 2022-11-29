@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { alertState } from '~~/stores/alertState'
-import { themeState } from '~~/stores/themeState'
-const theme = themeState()
-const alert = alertState()
+const theme = useStateTheme()
+const alert = useStateAlert()
 const { showAlert, alertData, alertType, alertTitle } = storeToRefs(alert)
 const { data, pending, refresh, error } = await useAsyncData('get', () =>
   // https://github.com/unjs/ofetch
@@ -40,7 +38,7 @@ async function sendRequest() {
 </script>
 
 <template>
-  <Kcard>
+  <VisualableKcard>
     <v-btn
       prepend-icon="mdi-vuetify"
       append-icon="mdi-vuetify"
@@ -71,5 +69,5 @@ async function sendRequest() {
     >
       Change Theme
     </v-btn>
-  </Kcard>
+  </VisualableKcard>
 </template>
