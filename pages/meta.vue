@@ -10,7 +10,7 @@
 <script setup>
 definePageMeta({
   title: 'My home page',
-  pageType: 'typed page meta test',
+  pageType: 'typed page meta test'
 })
 </script>
 

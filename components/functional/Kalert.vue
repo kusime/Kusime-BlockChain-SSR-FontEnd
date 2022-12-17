@@ -10,7 +10,7 @@
           :type="alertType"
           variant="tonal"
           class="max-w-2xl"
-        ></v-alert>
+        />
       </transition>
     </div>
   </div>

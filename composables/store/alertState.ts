@@ -8,6 +8,6 @@ export const useStateAlert = defineStore('alert', () => {
     alertData,
     showAlert,
     alertType,
-    alertTitle,
+    alertTitle
   }
 })

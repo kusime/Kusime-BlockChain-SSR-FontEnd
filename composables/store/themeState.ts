@@ -11,7 +11,7 @@ export const useStateTheme = defineStore('theme', () => {
   // register the theme Monitor
   function toggleTheme() {
     // toggleTheme
-    if (currentTheme.value == 'dark') {
+    if (currentTheme.value === 'dark') {
       colorMode.preference = 'light'
       currentTheme.value = 'light'
     } else {

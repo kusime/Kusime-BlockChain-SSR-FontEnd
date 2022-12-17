@@ -4,7 +4,7 @@ export default defineNuxtRouteMiddleware((page, _) => {
     return abortNavigation({
       statusCode: 401,
       message: 'You are not allowed to access this page',
-      stack: 'access denied',
+      stack: 'access denied'
     })
   }
   return navigateTo('/')

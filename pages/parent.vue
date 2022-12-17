@@ -7,7 +7,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  metaFromParent: 'metaFromParent',
+  metaFromParent: 'metaFromParent'
 })
 </script>
 

@@ -6,7 +6,7 @@ const items = [
   { text: 'Pinia Support', icon: 'mdi-flag' },
   { text: 'Nuxt Builtin Route Support', icon: 'mdi-flag' },
   { text: 'TypeScript Support', icon: 'mdi-flag' },
-  { text: 'Nuxt Fetch Support', icon: 'mdi-flag' },
+  { text: 'Nuxt Fetch Support', icon: 'mdi-flag' }
 ]
 </script>
 
@@ -18,18 +18,20 @@ const items = [
           <v-list class="transition-all duration-500 relative">
             <v-list-subheader>Features</v-list-subheader>
             <v-list-item v-for="(item, i) in items" :key="i">
-              <template v-slot:prepend>
-                <v-icon :icon="item.icon"></v-icon>
+              <template #prepend>
+                <v-icon :icon="item.icon" />
               </template>
 
-              <v-list-item-title class="md:text-center">{{
-                item.text
-              }}</v-list-item-title>
+              <v-list-item-title class="md:text-center">
+                {{
+                  item.text
+                }}
+              </v-list-item-title>
             </v-list-item>
           </v-list>
-          <v-divider></v-divider>
+          <v-divider />
           <v-card-actions class="pt-5 flex justify-center gap-10 duration-1000">
-            <slot></slot>
+            <slot />
           </v-card-actions>
         </v-card>
       </v-card-item>

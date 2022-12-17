@@ -1,5 +1,27 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  runtimeConfig: {
+    ANTI_BOT_SECURITY:"KUSIME_IS_COOL",
+    NODE_MANAGER: "http://192.168.59.100:32576",
+    NODE_SERVICE: "http://192.168.59.100:30471",
+    API: {
+      //THE BASIC INFORMATION
+      GET_BLOCK_CHAIN: "/get-chain",
+      GET_OPEN_TRANSACTION: "/get-open_transactions",
+      GET_NODES:"/get-pubs",
+      GET_NEW_WALLET: "/create-wallet",
+      // POST INFORMATION
+      // USER INTERACT post , need ssr reverse PROXY
+      POST_GET_BALANCE:"/get-balance",//optional
+      POST_CREATE_BLOCK: "/create-block",
+      POST_CREATE_TRANSACTION: "/create-transaction",
+    },
+    CACHE_KEY: {
+      BLOCK_CHAIN: "redis:chain",
+      TRANSACTIONS: "redis:trans",
+      ACTIVE_NODES: "redis:active_nodes"
+    }
+  },
   modules: [
     [
       '@pinia/nuxt',
@@ -26,10 +48,10 @@ export default defineNuxtConfig({
     transpile: ['vuetify']
   },
   tailwindcss: {
-    cssPath: '~/assets/main.css',
+    cssPath: '~/assets/main.css'
   },
   css: [
-    'vuetify/lib/styles/main.sass',
+    'vuetify/lib/styles/main.sass'
     // "~/assets/transition.css"
   ],
   // https://v8.i18n.nuxtjs.org/getting-started/basic-usage/
@@ -63,5 +85,19 @@ export default defineNuxtConfig({
       // ... or scan all modules within given directory
       'composables/**'
     ]
+  },
+  nitro: {
+    storage: {
+      'redis': {
+        driver: 'redis',
+        /* redis connector options */
+        port: 6379, // Redis port
+        host: "127.0.0.1", // Redis host
+        // username: "myredis", // needs Redis >= 6
+        password: "mypassword",
+        db: 0, // Defaults to 0
+        // tls: {} // tls/ssl
+      }
+    }
   }
 })

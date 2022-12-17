@@ -1,6 +1,8 @@
 <template>
   <div>
-    <div class="">Meta data from parent {{ $route.meta.metaFromParent }}</div>
+    <div class="">
+      Meta data from parent {{ $route.meta.metaFromParent }}
+    </div>
   </div>
 </template>
 
