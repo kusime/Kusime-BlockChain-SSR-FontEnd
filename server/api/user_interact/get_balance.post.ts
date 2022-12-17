@@ -16,7 +16,6 @@ export default defineEventHandler(async (event) => {
       wallet_address,
     },
   })
-  console.log(balance)
   if (balance === undefined) {
     return null
   }

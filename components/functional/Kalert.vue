@@ -3,11 +3,10 @@
     <div class="w-full flex justify-center items-center">
       <transition name="bounce">
         <v-alert
-          v-if="showAlert"
+          v-if="_showAlert"
           icon="mdi-vuetify"
-          :title="alertTitle"
-          :text="alertData"
-          :type="alertType"
+          :title="_alertTitle"
+          :type="_alertType"
           variant="tonal"
           class="max-w-2xl"
         />
@@ -18,7 +17,7 @@
 
 <script setup lang="ts">
 const alert = useStateAlert()
-const { showAlert, alertData, alertType, alertTitle } = storeToRefs(alert)
+const { _showAlert, _alertType, _alertTitle } = storeToRefs(alert)
 </script>
 
 <style scoped></style>
