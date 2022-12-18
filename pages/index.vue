@@ -1,12 +1,10 @@
 <script setup lang="ts">
-definePageMeta({
-  // layout: 'none',
-})
 const { data, pending } = await useLazyFetch('/api/cluster_info/active_nodes')
 </script>
 
 <template>
   <div class="hero min-h-screen" style="background-image: url(/background.png)">
+    <FunctionalKTitle title="Welcome" />
     <div class="hero-overlay bg-opacity-60"></div>
     <div class="hero-content text-center text-neutral-content">
       <div class="max-w-md">
@@ -17,7 +15,7 @@ const { data, pending } = await useLazyFetch('/api/cluster_info/active_nodes')
           Get your wallet , mine block , then start making transaction ~
         </p>
 
-        <InteractKLink to="/in"> Getting Start </InteractKLink>
+        <InteractKLink to="/open/chain"> Getting Start </InteractKLink>
       </div>
     </div>
   </div>

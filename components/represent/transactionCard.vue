@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { sign } from 'crypto'
-
 const { sender, recipient, amount, timestamp, signature } = defineProps({
   sender: {
     type: String,

@@ -1,5 +1,5 @@
 {
   "nuxt.isNuxtApp": true,
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["Clender", "mypassword", "myredis"]
+  "cSpell.words": ["Clender", "mypassword", "myredis", "opentransaction"]
 }

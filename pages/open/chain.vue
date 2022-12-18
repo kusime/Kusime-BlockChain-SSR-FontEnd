@@ -1,6 +1,7 @@
 <script setup lang="ts">
-const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
+definePageMeta({})
 
+const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
 // {
 //         "data": [
 //             {
@@ -19,73 +20,78 @@ const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
 </script>
 
 <template>
-  <ol class="p-10">
-    <li
-      v-for="(block, index) in block_chain"
-      :key="block.index"
-      :class="`border-l-2 ${
-        index % 2 == 0 ? 'border-green-600' : 'border-red-600'
-      }`"
-    >
-      <div class="md:flex flex-start">
-        <IconBlock />
-        <div
-          class="flex flex-col space-y-5 p-6 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10"
-        >
-          <!-- block header  -->
-          <table class="table w-full border-2">
-            <!-- head -->
-            <thead>
-              <tr>
-                <th>Block Index</th>
-                <th>Block Proof</th>
-                <th>Block Timestamp</th>
-                <th>Previous Block Hash</th>
-              </tr>
-            </thead>
-            <tbody>
-              <!-- row 1 -->
-              <tr class="hover">
-                <td>{{ block.index }}</td>
-                <td>{{ block.proof }}</td>
-                <td>{{ block.timestamp }}</td>
-                <td>{{ block.previous_block_hash }}</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <!-- block transactions field -->
+  <div v-if="!pending">
+    <FunctionalKTitle title="BlockChain" />
+    <RepresentChainState :block_chain="block_chain" />
+    <ol class="p-10">
+      <li
+        v-for="(block, index) in block_chain"
+        :key="block.index"
+        :class="`border-l-2 ${
+          index % 2 == 0 ? 'border-green-600' : 'border-red-600'
+        }`"
+      >
+        <div class="md:flex flex-start">
+          <IconBlock />
           <div
-            class="flex flex-col rounded-xl border-4 duration-500 border-gray-300 hover:border-gray-500 overflow-hidden shadow-xl min-hv-4 max-hv-9"
+            class="flex flex-col space-y-5 p-6 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10"
           >
+            <!-- block header  -->
+            <table class="table w-full border-2">
+              <!-- head -->
+              <thead>
+                <tr>
+                  <th>Block Index</th>
+                  <th>Block Proof</th>
+                  <th>Block Timestamp</th>
+                  <th>Previous Block Hash</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- row 1 -->
+                <tr class="hover">
+                  <td>{{ block.index }}</td>
+                  <td>{{ block.proof }}</td>
+                  <td>{{ block.timestamp }}</td>
+                  <td>{{ block.previous_block_hash }}</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <!-- block transactions field -->
             <div
-              class="h-14 bg-white border-b hover:bg-brand transition-all gap-2 p-4 flex flex-row items-center"
+              class="flex flex-col rounded-xl border-4 duration-500 border-gray-300 hover:border-gray-500 overflow-hidden shadow-xl min-hv-4 max-hv-9"
             >
-              <span class="flex-grow font-bold">Block Payload</span>
-            </div>
-            <div class="">
-              <h1></h1>
               <div
-                class="min-hv-4 overflow-y-auto flex-grow p-4"
-                style="max-height: calc(60vh - 56px)"
+                class="h-14 bg-white border-b hover:bg-brand transition-all gap-2 p-4 flex flex-row items-center"
               >
-                <div class="flex flex-col space-y-8">
-                  <RepresentTransactionCard
-                    v-for="tran in block.data"
-                    :key="tran"
-                    :sender="tran.sender"
-                    :amount="tran.amount"
-                    :recipient="tran.recipient"
-                    :timestamp="tran.timestamp"
-                    :signature="tran.signature"
-                  >
-                  </RepresentTransactionCard>
+                <span class="flex-grow font-bold">Block Payload</span>
+              </div>
+              <div class="">
+                <h1></h1>
+                <div
+                  class="min-hv-4 overflow-y-auto flex-grow p-4"
+                  style="max-height: calc(60vh - 56px)"
+                >
+                  <div class="flex flex-col space-y-8">
+                    <RepresentTransactionCard
+                      v-for="tran in block.data"
+                      :key="tran"
+                      :sender="tran.sender"
+                      :amount="tran.amount"
+                      :recipient="tran.recipient"
+                      :timestamp="tran.timestamp"
+                      :signature="tran.signature"
+                    >
+                    </RepresentTransactionCard>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </li>
-  </ol>
+      </li>
+    </ol>
+  </div>
+  <VisualableKLoading v-else />
 </template>
