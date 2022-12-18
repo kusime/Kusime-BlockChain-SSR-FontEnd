@@ -2,6 +2,7 @@
 definePageMeta({
   // layout: 'none',
 })
+const { data, pending } = await useLazyFetch('/api/cluster_info/active_nodes')
 </script>
 
 <template>

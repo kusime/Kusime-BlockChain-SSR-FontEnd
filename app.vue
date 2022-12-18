@@ -1,12 +1,7 @@
 <template>
+  <LazyFunctionalKalert />
   <NuxtLayout>
-    <LazyFunctionalKalert />
-    <NuxtPage
-      :transition="{
-        name: 'fade',
-        mode: 'out-in',
-      }"
-    />
+    <NuxtPage />
   </NuxtLayout>
 </template>
 <script setup lang="ts">

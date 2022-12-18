@@ -73,7 +73,7 @@ export default defineNuxtConfig({
   app: {
     // https://nuxt.com/docs/getting-started/transitions#layout-transitions
     // about the mode :  https://vuejs.org/guide/built-ins/transition.html#transition-modes
-    layoutTransition: { name: 'fade', mode: 'out-in' },
+    // layoutTransition: { name: 'fade', mode: 'out-in' },
     pageTransition: { name: 'bounce', mode: 'out-in' }
   },
   // https://nuxt.com/docs/guide/directory-structure/composables#how-files-are-scanned
