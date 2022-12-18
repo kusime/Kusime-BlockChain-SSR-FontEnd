@@ -486,11 +486,6 @@
     semver "^7.3.5"
     tar "^6.1.11"
 
-"@mdi/font@^7.0.96":
-  version "7.0.96"
-  resolved "https://registry.npmmirror.com/@mdi/font/-/font-7.0.96.tgz#9853c222623072f5575b4039c8c195ea929b61fc"
-  integrity sha512-rzlxTfR64hqY8yiBzDjmANfcd8rv+T5C0Yedv/TWk2QyAQYdc66e0kaN1ipmnYU3RukHRTRcBARHzzm+tIhL7w==
-
 "@netlify/functions@^1.3.0":
   version "1.3.0"
   resolved "https://registry.npmmirror.com/@netlify/functions/-/functions-1.3.0.tgz#4305a3fb6b49caf56cd2be88d4b8534b1d5aff4f"
@@ -6458,11 +6453,6 @@ vue@^3.2.45:
     "@vue/runtime-dom" "3.2.45"
     "@vue/server-renderer" "3.2.45"
     "@vue/shared" "3.2.45"
-
-vuetify@^3.0.0:
-  version "3.0.2"
-  resolved "https://registry.npmmirror.com/vuetify/-/vuetify-3.0.2.tgz#734166f0800e47b9d4a7e714b943534d91b0579d"
-  integrity sha512-d+lb8DHUrrn9GnKaZW1dEApjIEamUcZn1HxomiQ0+y8t+jKjktpruo16AvAjpEHhAcCeWZ5RuK/S9HdT6z68Uw==
 
 wcwidth@^1.0.1:
   version "1.0.1"

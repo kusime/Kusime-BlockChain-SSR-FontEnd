@@ -1,10 +1,10 @@
-type alertTypes = 'error' | 'success'
+type alertTypes = 'success' | 'error' | 'warning' | 'info'
 export const useStateAlert = defineStore('alert', () => {
   const _showAlert = ref(false)
   const _alertTitle = ref('')
   const _alertType = ref<alertTypes>('success')
 
-  const AlertShow = (title: string, type: 'success' | 'error') => {
+  const AlertShow = (title: string, type: alertTypes) => {
     // prepare the alert content
     _showAlert.value = true
     _alertTitle.value = title

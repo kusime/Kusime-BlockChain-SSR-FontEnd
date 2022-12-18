@@ -1,40 +1,33 @@
 <script setup lang="ts">
 const items = [
-  { text: 'Nuxt3 Support', icon: 'mdi-flag' },
-  { text: 'Tailwind Support', icon: 'mdi-flag' },
-  { text: 'MID Icon Support', icon: 'mdi-flag' },
-  { text: 'Pinia Support', icon: 'mdi-flag' },
-  { text: 'Nuxt Builtin Route Support', icon: 'mdi-flag' },
-  { text: 'TypeScript Support', icon: 'mdi-flag' },
-  { text: 'Nuxt Fetch Support', icon: 'mdi-flag' }
+  { text: 'Nuxt3 Support' },
+  { text: 'Tailwind Support' },
+  { text: 'MID Icon Support' },
+  { text: 'Pinia Support' },
+  { text: 'Nuxt Builtin Route Support' },
+  { text: 'TypeScript Support' },
+  { text: 'Nuxt Fetch Support' },
 ]
 </script>
 
 <template>
-  <v-card class="duration-500 transition-all md:w-[50rem]" variant="outlined">
-    <div class="w-full py-5 flex justify-center items-center">
-      <v-card-item class="md:w-[41rem]">
-        <v-card class="mx-auto">
-          <v-list class="transition-all duration-500 relative">
-            <v-list-subheader>Features</v-list-subheader>
-            <v-list-item v-for="(item, i) in items" :key="i">
-              <template #prepend>
-                <v-icon :icon="item.icon" />
-              </template>
+  <div
+    class="flex flex-col space-y-6 transition-all duration-500 p-16 py-44 md:py-20 md:p-20 md:scale-125 bg-base-200 rounded-2xl text-base-content"
+  >
+    <div class="card-body">
+      <!-- list for loop -->
+      <h2 class="card-title">Features!</h2>
+      <div class="chat chat-end" v-for="item in items">
+        <div class="chat-bubble chat-bubble-success">
+          {{ item.text }}
+        </div>
+      </div>
 
-              <v-list-item-title class="md:text-center">
-                {{
-                  item.text
-                }}
-              </v-list-item-title>
-            </v-list-item>
-          </v-list>
-          <v-divider />
-          <v-card-actions class="pt-5 flex justify-center gap-10 duration-1000">
-            <slot />
-          </v-card-actions>
-        </v-card>
-      </v-card-item>
+      <div class="divider"></div>
+      <!-- action section -->
+      <div class="card-actions justify-end">
+        <slot />
+      </div>
     </div>
-  </v-card>
+  </div>
 </template>

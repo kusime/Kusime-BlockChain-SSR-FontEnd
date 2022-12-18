@@ -12,5 +12,8 @@ export default {
       sans: ['Bangers']
     }
   },
+  daisyui: {
+    themes:  ["dark", "light"]
+  },
   plugins: [require('daisyui')]
 }

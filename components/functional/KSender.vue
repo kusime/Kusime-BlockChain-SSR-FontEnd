@@ -1,5 +1,6 @@
 <template>
-  <v-btn
+  <button
+    class="btn"
     prepend-icon="mdi-vuetify"
     append-icon="mdi-vuetify"
     :disabled="pending"
@@ -10,18 +11,16 @@
         <div v-if="pending" class="absolute w-[117px] translate-y-[-4px]">
           <div class="flex flex-col items-center">
             <div class="w-full" />
-            <v-progress-linear indeterminate :height="10" class="w-full" />
+            <progress class="progress w-full"></progress>
           </div>
         </div>
         <div v-else class="absolute -translate-y-2">Send Request</div>
       </transition>
     </div>
-  </v-btn>
+  </button>
 </template>
 
 <script setup lang="ts">
-import { anyTypeAnnotation } from '@babel/types'
-
 // caller = ()=> useLazyFetch("api address",{other configuration}) ==> ssr return
 const { caller, successTitle, failedTitle, result } = defineProps({
   caller: {

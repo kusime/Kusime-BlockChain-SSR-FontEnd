@@ -3,20 +3,25 @@
 
 export const useStateTheme = defineStore('theme', () => {
   const colorMode = useColorMode()
-  const currentTheme = ref<string>(colorMode.value)
-  // colorMode type is Proxy
-  watch(colorMode, () => {
-    currentTheme.value = colorMode.value
-  })
+  const currentTheme = ref<string>(
+    colorMode.value === 'system' ? 'dark' : 'light'
+  )
   // register the theme Monitor
   function toggleTheme() {
     // toggleTheme
+    console.log(currentTheme.value)
     if (currentTheme.value === 'dark') {
-      colorMode.preference = 'light'
       currentTheme.value = 'light'
-    } else {
-      colorMode.preference = 'dark'
+      document.documentElement.dataset.theme = 'light'
+      document.documentElement.dataset.theme = 'light'
+      return
+    }
+
+    if (currentTheme.value === 'light') {
       currentTheme.value = 'dark'
+      document.documentElement.dataset.theme = 'dark'
+      document.documentElement.dataset.theme = 'dark'
+      return
     }
   }
   return {

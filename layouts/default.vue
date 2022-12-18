@@ -1,11 +1,12 @@
 <template>
-  <v-app :theme="theme.currentTheme" class="transition-all duration-300">
-    <VisualableKheader />
-    <v-container class="h-screen flex justify-center items-center">
-      <slot />
-    </v-container>
-    <VisualableKfooter />
-  </v-app>
+  <VisualableKheader />
+  <div
+    :theme="theme.currentTheme"
+    class="flex min-h-screen justify-center items-center bg-base-100"
+  >
+    <slot />
+  </div>
+  <VisualableKfooter />
 </template>
 
 <script setup lang="ts">

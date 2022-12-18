@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     NODE_MANAGER: "http://192.168.59.100:32576",
     NODE_SERVICE: "http://192.168.59.100:30471",
     API: {
+      GET_ALIVE:"/alive",
       //THE BASIC INFORMATION
       GET_BLOCK_CHAIN: "/get-chain",
       GET_OPEN_TRANSACTION: "/get-open_transactions",
@@ -44,16 +45,16 @@ export default defineNuxtConfig({
     classSuffix: ''
   },
   // https://qiita.com/ot_RikuOta/items/bd644957dacbac057a05#%E3%83%AC%E3%82%A4%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E4%BD%9C%E6%88%90
-  build: {
-    transpile: ['vuetify']
-  },
+  // build: {
+    // transpile: ['vuetify']
+  // },
   tailwindcss: {
     cssPath: '~/assets/main.css'
   },
-  css: [
-    'vuetify/lib/styles/main.sass'
-    // "~/assets/transition.css"
-  ],
+  // css: [
+  //   'vuetify/lib/styles/main.sass'
+  //   // "~/assets/transition.css"
+  // ],
   // https://v8.i18n.nuxtjs.org/getting-started/basic-usage/
   i18n: {
     vueI18n: {

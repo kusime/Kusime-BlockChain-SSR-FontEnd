@@ -1,7 +1,12 @@
 <template>
-  <v-app class="transition-all duration-300">
-    <VisualableKheader />
+  <div
+    :theme="theme.currentTheme"
+    class="flex min-h-screen justify-center items-center bg-base-100"
+  >
     <slot />
-  </v-app>
+  </div>
 </template>
-<script setup lang="ts"></script>
+
+<script setup lang="ts">
+const theme = useStateTheme()
+</script>

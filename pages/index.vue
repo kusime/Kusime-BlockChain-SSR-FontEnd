@@ -1,16 +1,23 @@
 <script setup lang="ts">
-const chain: any[] = []
+definePageMeta({
+  // layout: 'none',
+})
 </script>
 
 <template>
-  <VisualableKcard>
-    <FunctionalKSender
-      :caller="get_chain"
-      success-title="returned"
-      failed-title="failed"
-      :result="chain"
-    />
-    <FunctionalKThemeButton />
-    {{ chain[0] }}
-  </VisualableKcard>
+  <div class="hero min-h-screen" style="background-image: url(/background.png)">
+    <div class="hero-overlay bg-opacity-60"></div>
+    <div class="hero-content text-center text-neutral-content">
+      <div class="max-w-md">
+        <h1 class="mb-5 text-5xl font-bold text-gray-50/80">
+          Kusime BlockChain
+        </h1>
+        <p class="mb-5 max-w-96 text-xl text-white">
+          Get your wallet , mine block , then start making transaction ~
+        </p>
+
+        <InteractKLink to="/in"> Getting Start </InteractKLink>
+      </div>
+    </div>
+  </div>
 </template>
