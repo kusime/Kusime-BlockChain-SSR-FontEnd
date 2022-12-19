@@ -29,31 +29,14 @@
           </li>
         </ul>
       </div>
+      <NuxtLink to="/" class="btn btn-ghost normal-case text-xl"
+        >Kusime BlockChain</NuxtLink
+      >
     </div>
     <div class="navbar-center">
-      <a class="btn btn-ghost normal-case text-xl">BlockChain</a>
     </div>
-    <div class="navbar-end">
-      <transition name="bounce">
-        <div
-          v-if="currentServerState === true"
-          class="right-20 absolute badge badge-success gap-2 p-5"
-        >
-          <IconSuccess />
-          Cluster online
-        </div>
-        <div
-          v-else-if="currentServerState === false"
-          class="right-20 absolute badge badge-error gap-2 p-5"
-        >
-          <IconError />
-          Cluster offline
-        </div>
-        <div v-else class="right-20 absolute badge badge-info gap-2 p-5">
-          <IconInfo />
-          Checking Cluster
-        </div>
-      </transition>
+    <div class="navbar-end gap-4">
+      <RepresentServerState :current-server-state="currentServerState" />
       <!-- end function theme toggle -->
       <FunctionalKThemeButton />
     </div>

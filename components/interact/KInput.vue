@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-defineProps({
+const { placeholder, type, inputs } = defineProps({
   placeholder: String,
   type: {
     type: String,

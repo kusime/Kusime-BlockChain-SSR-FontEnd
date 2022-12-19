@@ -30,7 +30,7 @@ const { sender, recipient, amount, timestamp, signature } = defineProps({
     class="flex items-center justify-center overflow-visible border-4 border-[#ffad76d7] rounded-2xl p-2"
   >
     <div class="bg-white shadow-xl duration-500 transition-all">
-      <div class="rounded-2xl">
+      <div class="rounded-2xl text-black">
         <div
           class="md:grid md:grid-cols-2 bg-[#dddddda4] md:space-y-0 space-y-1 p-4 border-b"
         >

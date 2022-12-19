@@ -50,7 +50,7 @@ const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
               <tbody>
                 <!-- row 1 -->
                 <tr class="hover">
-                  <td>{{ block.index }}</td>
+                  <td :id="block.index">{{ block.index }}</td>
                   <td>{{ block.proof }}</td>
                   <td>{{ block.timestamp }}</td>
                   <td>{{ block.previous_block_hash }}</td>
