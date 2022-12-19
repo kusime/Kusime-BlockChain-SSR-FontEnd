@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { data: transactions, pending } = useLazyFetch(
-  '/api/base_info/transactions'
-)
+const { data: transactions, pending } = get_transactions()
 
 // [
 //     {

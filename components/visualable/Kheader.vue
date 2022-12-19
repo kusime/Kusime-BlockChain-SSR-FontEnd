@@ -33,9 +33,9 @@
         >Kusime BlockChain</NuxtLink
       >
     </div>
-    <div class="navbar-center">
-    </div>
+    <div class="navbar-center"></div>
     <div class="navbar-end gap-4">
+      <FunctionalKWalletGet>Get New Wallet</FunctionalKWalletGet>
       <RepresentServerState :current-server-state="currentServerState" />
       <!-- end function theme toggle -->
       <FunctionalKThemeButton />

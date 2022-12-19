@@ -1,7 +1,5 @@
 <script setup lang="ts">
-definePageMeta({})
-
-const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
+const { data: block_chain, pending } = get_chain()
 // {
 //         "data": [
 //             {
@@ -22,9 +20,13 @@ const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
 <template>
   <div v-if="!pending">
     <FunctionalKTitle title="BlockChain" />
-    <RepresentChainState :block_chain="block_chain" />
+    <RepresentChainState
+      v-if="block_chain.length !== 1"
+      :block_chain="block_chain"
+    />
     <ol class="p-10">
       <li
+        v-if="block_chain.length !== 1"
         v-for="(block, index) in block_chain"
         :key="block.index"
         :class="`border-l-2 ${
@@ -91,6 +93,12 @@ const { data: block_chain, pending } = useLazyFetch('/api/base_info/chain')
           </div>
         </div>
       </li>
+      <div
+        v-else
+        class="w-full min-h-screen text-white flex items-center justify-center flex-col -translate-y-36"
+      >
+        <div class="text-[8rem]">No Block in the chain</div>
+      </div>
     </ol>
   </div>
   <VisualableKLoading v-else />

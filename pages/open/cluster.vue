@@ -1,7 +1,5 @@
 <script setup lang="ts">
-const { data: node_rsa, pending } = useLazyFetch(
-  '/api/cluster_info/active_nodes'
-)
+const { data: node_rsa, pending } = get_nodes()
 </script>
 
 <template>

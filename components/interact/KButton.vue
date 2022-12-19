@@ -1,11 +1,10 @@
 <script setup lang="ts">
-let { clickHooks } = defineProps(['clickHooks'])
+let { clickHooks, disabled } = defineProps(['clickHooks', 'disabled'])
 // implemented the checker function other wise showing alert
+const { AlertShow } = useStateAlert()
 let guard_hook: any
-
 if (!(clickHooks instanceof Function)) {
   console.log('The element is not a function')
-  const { AlertShow } = useStateAlert()
   // redirect to the alert
   guard_hook = () => AlertShow('Error type of KButton input', 'error')
 } else {
@@ -16,8 +15,9 @@ if (!(clickHooks instanceof Function)) {
 <template>
   <button
     :style="{ '--clr': randomColor() }"
-    class="px-5 py-3"
+    class="px-5 py-3 translate-x-[-8.5rem]"
     @click.prevent="guard_hook"
+    :disabled="disabled"
   >
     <i></i>
     <span class="rainbow-text">
@@ -39,7 +39,7 @@ button {
   transition: 0.5s;
   border: 3px solid rgb(68, 68, 68);
   font-weight: 600;
-  margin: 4px auto;
+
   width: 320px;
   box-sizing: border-box;
   border-radius: 20px;

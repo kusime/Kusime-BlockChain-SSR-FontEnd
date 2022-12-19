@@ -31,6 +31,14 @@
               </div>
             </div>
           </div>
+          <div class="" v-if="type === 'info'">
+            <div class="alert alert-info shadow-lg w-full">
+              <div>
+                <IconInfo />
+                <span>{{ message }}</span>
+              </div>
+            </div>
+          </div>
         </div>
       </transition>
     </div>
