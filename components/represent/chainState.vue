@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { block_chain } = defineProps(['block_chain'])
+const { block_chain } = defineProps(['block_chain', 'refreshHook'])
 
 const total_blocks = block_chain.length
 const all_block_payloads = block_chain.map((block: any) => toRaw(block.data))
@@ -13,7 +13,7 @@ const block_chains_payload_count = all_block_payloads.reduce(
   <div
     class="absolute right-10 translate-y-[40px] z-10 flex flex-col space-y-5 p-6 rounded-lg shadow-lg bg-gray-100 ml-6 mb-10"
   >
-    <div class="stats shadow py-[3.5rem]">
+    <div class="stats shadow py-8">
       <div class="stat">
         <div class="stat-figure text-primary">
           <svg
@@ -33,6 +33,11 @@ const block_chains_payload_count = all_block_payloads.reduce(
         <div class="stat-title">Blockchain Length</div>
         <div class="stat-value text-primary">{{ total_blocks }}</div>
         <div class="stat-desc">Current Blockchain length</div>
+        <div class="stat-actions">
+          <button class="btn btn-sm btn-success" @click="refreshHook">
+            Refresh
+          </button>
+        </div>
       </div>
 
       <div class="stat">

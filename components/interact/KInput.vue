@@ -4,7 +4,7 @@
     class="px-5 py-3 rounded-2xl focus:outline-none duration-500 border-4 border-[#444444] focus:border-[#42ffe9b9] w-full max-w-xs bg-[#3040449a]"
     :placeholder="placeholder"
     @change="emitValue"
-    @keyup.enter.prevent="submitHook(val)"
+    @keyup.enter.prevent="submitHook ? submitHook(val) : () => {}"
     :value="inputs"
   />
 </template>
@@ -23,7 +23,6 @@ const { placeholder, type, inputs, submitHook } = defineProps({
   },
   submitHook: {
     type: Function,
-    required: true,
   },
 })
 let val = ref('')

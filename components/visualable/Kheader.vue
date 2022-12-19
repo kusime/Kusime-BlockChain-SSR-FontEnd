@@ -24,6 +24,9 @@
     </div>
     <div class="navbar-center"></div>
     <div class="navbar-end gap-4">
+      <FunctionalKCreateTrans />
+      <FunctionalKCreateBlock />
+
       <RepresentServerState :current-server-state="currentServerState" />
       <!-- end function theme toggle -->
       <FunctionalKThemeButton />

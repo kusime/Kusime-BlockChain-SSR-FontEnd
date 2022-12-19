@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { data: block_chain, pending } = get_chain()
+const { data: block_chain, pending, refresh } = get_chain()
 // {
 //         "data": [
 //             {
@@ -23,6 +23,7 @@ const { data: block_chain, pending } = get_chain()
     <RepresentChainState
       v-if="block_chain.length !== 1"
       :block_chain="block_chain"
+      :refresh-hook="refresh"
     />
     <ol class="p-10">
       <li

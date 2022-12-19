@@ -20,13 +20,5 @@ export default defineEventHandler(async (event) => {
     // error mining block
     return null
   }
-
-  // trigger the refresher
-  await $fetch('/api/refresher', {
-    method: 'POST',
-    body: {
-      token: ENV.ANTI_BOT_SECURITY,
-    },
-  })
   return block
 })

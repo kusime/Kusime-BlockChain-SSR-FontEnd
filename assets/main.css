@@ -20,7 +20,7 @@
 }
 
 .animate-leave-active {
-  @apply duration-300 transition-all scale-50 translate-y-24;
+  @apply duration-500 transition-all scale-50 translate-y-24;
 }
 
 .animate-leave-to {

@@ -16,8 +16,8 @@ export const useWalletState = defineStore('walletState', () => {
       return
     }
     AlertShow('Wallet Record Success', 'success')
-    walletBalance.value = balance.value
     walletRecord.value = user_wallet
+    walletBalance.value = balance.value
   }
   return { connectWallet, walletRecord, walletBalance }
 })

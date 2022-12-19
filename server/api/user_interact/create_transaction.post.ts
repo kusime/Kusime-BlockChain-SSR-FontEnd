@@ -21,12 +21,5 @@ export default defineEventHandler(async (event) => {
     return null
   }
 
-  // trigger the refresher
-  await $fetch('/api/refresher', {
-    method: 'POST',
-    body: {
-      token: ENV.ANTI_BOT_SECURITY,
-    },
-  })
   return transaction
 })
