@@ -16,7 +16,6 @@
 <script setup>
 const colorMode = useColorMode()
 colorMode.preference = 'dark'
-console.log(colorMode.preference)
 </script>
 ```
 

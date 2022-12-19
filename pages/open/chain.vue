@@ -97,7 +97,9 @@ const { data: block_chain, pending } = get_chain()
         v-else
         class="w-full min-h-screen text-white flex items-center justify-center flex-col -translate-y-36"
       >
-        <div class="text-[8rem]">No Block in the chain</div>
+        <div class="text-[8rem] dark:text-white text-black">
+          No Block in the chain
+        </div>
       </div>
     </ol>
   </div>

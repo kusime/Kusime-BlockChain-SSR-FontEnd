@@ -15,7 +15,7 @@ if (!(clickHooks instanceof Function)) {
 <template>
   <button
     :style="{ '--clr': randomColor() }"
-    class="px-5 py-3 translate-x-[-8.5rem]"
+    class="px-5 py-3"
     @click.prevent="guard_hook"
     :disabled="disabled"
   >

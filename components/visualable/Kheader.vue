@@ -1,22 +1,9 @@
 <template>
   <div class="navbar z-50">
-    <div class="navbar-start">
+    <div class="navbar-start gap-4">
       <div class="dropdown">
         <label tabindex="0" class="btn btn-ghost btn-circle">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h7"
-            />
-          </svg>
+          <IconNav />
         </label>
         <ul
           tabindex="0"
@@ -32,10 +19,11 @@
       <NuxtLink to="/" class="btn btn-ghost normal-case text-xl"
         >Kusime BlockChain</NuxtLink
       >
+      <FunctionalKConnectWallet />
+      <FunctionalKDisconnectWallet />
     </div>
     <div class="navbar-center"></div>
     <div class="navbar-end gap-4">
-      <FunctionalKWalletGet>Get New Wallet</FunctionalKWalletGet>
       <RepresentServerState :current-server-state="currentServerState" />
       <!-- end function theme toggle -->
       <FunctionalKThemeButton />

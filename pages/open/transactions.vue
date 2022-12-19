@@ -48,9 +48,11 @@ const { data: transactions, pending } = get_transactions()
       </li>
       <div
         v-else
-        class="w-full min-h-screen text-white flex items-center justify-center flex-col -translate-y-10"
+        class="w-full min-h-screen text-white flex items-center justify-center flex-col -translate-y-24"
       >
-        <div class="text-[8rem]">No transactions</div>
+        <div class="text-[8rem] dark:text-white text-black">
+          No transactions
+        </div>
 
         <InteractKLink to="/open/chain"> Checkout Chain </InteractKLink>
       </div>

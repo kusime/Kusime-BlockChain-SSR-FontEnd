@@ -9,9 +9,10 @@ export const useStateTheme = defineStore('theme', () => {
   // register the theme Monitor
   function toggleTheme() {
     // toggleTheme
-    console.log(currentTheme.value)
     if (currentTheme.value === 'dark') {
       currentTheme.value = 'light'
+      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.add('light')
       document.documentElement.dataset.theme = 'light'
       document.documentElement.dataset.theme = 'light'
       return
@@ -19,6 +20,8 @@ export const useStateTheme = defineStore('theme', () => {
 
     if (currentTheme.value === 'light') {
       currentTheme.value = 'dark'
+      document.documentElement.classList.remove('light')
+      document.documentElement.classList.add('dark')
       document.documentElement.dataset.theme = 'dark'
       document.documentElement.dataset.theme = 'dark'
       return

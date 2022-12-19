@@ -15,7 +15,7 @@ const { data, pending } = await useLazyFetch('/api/cluster_info/active_nodes')
           Get your wallet , mine block , then start making transaction ~
         </p>
 
-        <InteractKLink to="/open/chain"> Getting Start </InteractKLink>
+        <FunctionalKWalletGet>Get New Wallet</FunctionalKWalletGet>
       </div>
     </div>
   </div>
