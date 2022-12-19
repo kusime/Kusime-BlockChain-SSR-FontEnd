@@ -1,5 +1,8 @@
+import { isNumber } from '@intlify/shared'
+
 export const useWalletState = defineStore('walletState', () => {
   // initialize the wallet
+  const ENV = useRuntimeConfig() // not available in client side
   const { AlertShow } = useStateAlert()
   const walletRecord = ref('')
   const walletBalance = ref()
@@ -10,14 +13,14 @@ export const useWalletState = defineStore('walletState', () => {
     }
     // try to get wallet Balance
     const { data: balance } = await get_wallet_balance(user_wallet)
-    console.log(balance)
-    if (balance.value === null) {
+    if (!isNumber(balance.value)) {
       AlertShow('Wallet Balance Retrieved Failed...', 'error')
       return
     }
     AlertShow('Wallet Record Success', 'success')
     walletRecord.value = user_wallet
     walletBalance.value = balance.value
+    return
   }
   return { connectWallet, walletRecord, walletBalance }
 })

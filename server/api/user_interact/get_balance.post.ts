@@ -7,6 +7,12 @@ export default defineEventHandler(async (event) => {
   if (wallet_address === undefined) {
     return null
   }
+  // check if the wallet is Mine wallet
+  console.log(wallet_address === ENV.MINE_SYSTEM_PUB)
+  if (wallet_address === ENV.MINE_SYSTEM_PUB) {
+    console.log('received invalid wallet address')
+    return null
+  }
   const { balance } = await $fetch<{
     balance: number
     message: string

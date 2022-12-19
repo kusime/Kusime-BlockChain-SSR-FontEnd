@@ -1,7 +1,7 @@
 <template>
   <input
     :type="type"
-    class="px-5 py-3 rounded-2xl focus:outline-none duration-500 border-4 border-[#444444] focus:border-[#42ffe9b9] w-full max-w-xs bg-[#3040449a]"
+    class="px-5 py-3 rounded-2xl focus:outline-none duration-500 border-4 border-[#444444] focus:border-[#42ffe9b9] w-full max-w-xs bg-[#3040449a] placeholder:text-[#000000ab] dark:placeholder:text-[#ffffffa6]"
     :placeholder="placeholder"
     @change="emitValue"
     @keyup.enter.prevent="submitHook ? submitHook(val) : () => {}"

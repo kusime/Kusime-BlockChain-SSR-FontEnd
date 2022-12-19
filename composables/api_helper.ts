@@ -20,3 +20,19 @@ export const mine_new_block = (miner_wallet: string) => {
     },
   })
 }
+export const create_new_transfer = (
+  sender_wallet: string,
+  recipient_wallet: string,
+  amount: string,
+  sender_privatekey: string
+) => {
+  return useLazyFetch('/api/user_interact/create_transaction', {
+    method: 'POST',
+    body: {
+      sender_wallet,
+      recipient_wallet,
+      amount,
+      sender_privatekey,
+    },
+  })
+}

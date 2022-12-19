@@ -25,7 +25,11 @@ const { data: transactions, pending } = get_transactions()
         }`"
       >
         <div class="md:flex flex-start">
-          <IconTrans />
+          <div
+            class="bg-[#fff] w-6 h-6 flex items-center justify-center rounded-full -ml-3.5 absolute"
+          >
+            <IconTrans />
+          </div>
           <div class="">
             <h1></h1>
             <div
