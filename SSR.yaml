@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ssr-deployment
+spec:
+  selector:
+    matchLabels:
+      app: ssr
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: ssr
+    spec:
+      containers:
+        - name: ssr
+          image: localhost:5000/gradual-ssr:9000-stable-fixed-1
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 9000
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 500Mi
+            limits:
+              cpu: 1000m
+              memory: 500Mi
+        - name: ssr-cache
+          image: localhost:5000/gradual-ssr:cache
+          imagePullPolicy: Always
+          resources:
+            requests:
+              cpu: 100m
+              memory: 100Mi
+            limits:
+              cpu: 400m
+              memory: 400Mi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ssr
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 9000
+  selector:
+    app: ssr

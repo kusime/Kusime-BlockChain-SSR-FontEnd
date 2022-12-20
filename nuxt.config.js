@@ -3,8 +3,9 @@ export default defineNuxtConfig({
   runtimeConfig: {
     MINE_SYSTEM_PUB:"30819f300d06092a864886f70d010101050003818d0030818902818100c8501b7d73404a8f101cf011827d261662ee9b17195f0b297da79604114c48fa3f161cb13d8e039ceefdfb03cb559bcef332c6a3713d74d04b948e363019b1472265ef92efeb3ea6ee91ad585369fdf8e155582756e93ccf8bef9ef8062ed2535d52af1e6f11cd03e1a34e98436b278afab544c3cf28c0aa8e27af2ddd8b19030203010001",
     ANTI_BOT_SECURITY:"KUSIME_IS_COOL",
-    NODE_MANAGER: "http://192.168.59.100:32576",
-    NODE_SERVICE: "http://192.168.59.100:30471",
+    // production mode
+    NODE_MANAGER: "http://nodemanager.default.svc.cluster.local:8000",
+    NODE_SERVICE: "http://node.default.svc.cluster.local:6000",
     API: {
       GET_ALIVE:"/alive",
       //THE BASIC INFORMATION
@@ -96,7 +97,7 @@ export default defineNuxtConfig({
         port: 6379, // Redis port
         host: "127.0.0.1", // Redis host
         // username: "myredis", // needs Redis >= 6
-        password: "mypassword",
+        // password: "mypassword",
         db: 0, // Defaults to 0
         // tls: {} // tls/ssl
       }
