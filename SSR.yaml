@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: ssr
-          image: localhost:5000/gradual-ssr:9000-stable-fixed-1
+          image: localhost:5000/gradual-ssr:9000-stable-fixed-4
           imagePullPolicy: Always
           ports:
             - containerPort: 9000

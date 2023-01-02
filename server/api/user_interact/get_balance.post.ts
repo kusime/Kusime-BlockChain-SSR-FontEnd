@@ -14,7 +14,7 @@ export default defineEventHandler(async (event) => {
     return null
   }
   const { balance } = await $fetch<{
-    balance: number
+    balance: string
     message: string
   }>(url, {
     method: 'POST',
@@ -26,5 +26,6 @@ export default defineEventHandler(async (event) => {
     return null
   }
   // not trigger the refresher
+
   return balance
 })

@@ -14,16 +14,19 @@ const transferHook = async () => {
   // recipient wallet check
   if (Recipient.value.length < 324 || Recipient.value.length > 1000) {
     AlertShow('Error Recipient Wallet Format', 'error')
+    disabled.value = false
     return
   }
   // user private key check
   if (PrivateKey.value.length <= 1000) {
     AlertShow('Error PrivateKey Wallet Format', 'error')
+    disabled.value = false
     return
   }
   // user amount check
   if (Amount.value > walletBalance.value) {
     AlertShow('Insufficient Balance', 'error')
+    disabled.value = false
     return
   }
 
@@ -32,6 +35,7 @@ const transferHook = async () => {
   console.log(balance)
   if (balance.value === null) {
     AlertShow('Maybe Recipient Wallet is error', 'error')
+    disabled.value = false
     return
   }
   // all basic information check passed try to create a new transaction
